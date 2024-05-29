@@ -14,5 +14,30 @@
         <div class="bg-light container py-4">
             <p class="title text-center text-dark">Qui mostreremo il form per creare il nuovo Fumetto!</p>
         </div>
-    </section>    
+
+        <div class="container">
+            <form action="{{route('comics.store')}}" method="POST">
+
+                {{-- Qui va inserito il Cross Site Request Forgering --}}
+                @csrf
+
+                <div class="mt-3">
+                    <label for="title" class="form-label text-light">Città</label>
+                    <input type="text" name="title" class="form-control" id="title" placeholder="Batman: Returns">
+                </div>
+
+                <div class="my-3">
+                    <label for="price" class="form-label text-light">Indirizzo</label>
+                    <input type="text" name="price" class="form-control" id="price" placeholder="$19.99">
+                </div>
+
+                <div class="mb-3">
+                    <label for="type" class="form-label text-light">Tipologia</label>
+                    <input type="text" name="type" class="form-control" id="type" placeholder="comic book">
+                </div>
+
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </section>
 @endsection

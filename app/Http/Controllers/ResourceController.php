@@ -22,4 +22,10 @@ class ResourceController extends Controller
         return view('comics.show', compact('comic'));
 
     }
+
+
+    public function create()
+    {
+        return view('comics.create');
+    }
 }

@@ -14,6 +14,9 @@
                     <div class="col-2 text-center">
                         <a href="{{route('comics.index')}}">Comics</a>
                     </div>
+                    <div class="col-2 text-center">
+                        <a href="{{route('comics.create')}}">Create</a>
+                    </div>
                 </div>
             </div>
         </nav>

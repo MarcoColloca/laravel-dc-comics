@@ -23,7 +23,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::get('/comics',[ResourceController::class, 'index'])->name('comics.index');
 
 // Create
-
+Route::get('/comics/create', [ResourceController::class, 'create'])->name('comics.create');
 
 
 // Show

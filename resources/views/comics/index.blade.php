@@ -17,14 +17,14 @@
                 <div class="col-4">
                     <div class="card">
                         <img src="{{$comic->thumb}}" class="card-img-top img-micro align-self-center p-1" alt="...">
-                        <div class="card-body">
+                        <div class="card-body my-card-body">
                             <h5 class="card-title">{{$comic->title}}</h5>
                             <p class="card-text">{{$comic->series}}</p>
                             <p class="card-text">{{$comic->price}} $</p>
                             <p class="card-text">{{$comic->sale_date}}</p>
                             <p class="card-text">{{$comic->type}}</p>
 
-                            <a href="{{route('comics.show', $comic)}}" class="btn btn-primary">Detail</a>
+                            <a href="{{route('comics.show', $comic)}}" class="btn btn-warning text-danger border-danger">Details</a>
                         </div>
                     </div>
                 </div>

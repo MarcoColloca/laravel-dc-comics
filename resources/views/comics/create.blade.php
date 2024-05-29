@@ -36,7 +36,7 @@
                     <input type="text" name="type" class="form-control" id="type" placeholder="comic book">
                 </div>
 
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-danger">Submit</button>
             </form>
         </div>
     </section>

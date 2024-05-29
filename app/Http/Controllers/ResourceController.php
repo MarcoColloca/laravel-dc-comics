@@ -28,4 +28,9 @@ class ResourceController extends Controller
     {
         return view('comics.create');
     }
+
+
+    public function store(){
+        dump('Metodo Store');
+    }
 }

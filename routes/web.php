@@ -31,3 +31,4 @@ Route::get('/comics/{comic}', [ResourceController::class, 'show'])->name('comics
 
 
 // Store
+Route::post('/houses', [ResourceController::class, 'store'])->name('comics.store');

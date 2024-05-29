@@ -1,7 +1,7 @@
 <?php
 
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\ComicController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,15 +20,15 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 // Comic CRUD
 
 // Index
-Route::get('/comics',[ResourceController::class, 'index'])->name('comics.index');
+Route::get('/comics',[ComicController::class, 'index'])->name('comics.index');
 
 // Create
-Route::get('/comics/create', [ResourceController::class, 'create'])->name('comics.create');
+Route::get('/comics/create', [ComicController::class, 'create'])->name('comics.create');
 
 
 // Show
-Route::get('/comics/{comic}', [ResourceController::class, 'show'])->name('comics.show');
+Route::get('/comics/{comic}', [ComicController::class, 'show'])->name('comics.show');
 
 
 // Store
-Route::post('/houses', [ResourceController::class, 'store'])->name('comics.store');
+Route::post('/houses', [ComicController::class, 'store'])->name('comics.store');

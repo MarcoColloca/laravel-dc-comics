@@ -28,7 +28,7 @@
 
                 <div class="my-3">
                     <label for="price" class="form-label text-light">Indirizzo</label>
-                    <input type="text" name="price" class="form-control" id="price" placeholder="$19.99">
+                    <input type="text" name="price" class="form-control" id="price" placeholder="19.99">
                 </div>
 
                 <div class="mb-3">

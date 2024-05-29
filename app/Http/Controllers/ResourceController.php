@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Comic;
 use Illuminate\Http\Request;
 
 class ResourceController extends Controller
@@ -10,5 +11,15 @@ class ResourceController extends Controller
 
 
         return view('comics.index');
+    }
+
+
+    public function show(Comic $comic){
+
+
+        dump('Funziona');
+
+        return view('comics.show', compact('comic'));
+
     }
 }

@@ -27,7 +27,7 @@ Route::get('/comics',[ResourceController::class, 'index'])->name('comics.index')
 
 
 // Show
-
+Route::get('/comics/{comic}', [ResourceController::class, 'show'])->name('comics.show');
 
 
 // Store

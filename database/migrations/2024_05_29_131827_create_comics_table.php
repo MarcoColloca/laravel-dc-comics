@@ -8,7 +8,8 @@ return new class extends Migration
 {
     /**
      * Run the migrations.
-     */
+    */
+
     public function up(): void
     {
         Schema::create('comics', function (Blueprint $table) {
@@ -16,7 +17,7 @@ return new class extends Migration
             $table->string('title', 255);
             $table->text('description')->nullable();
             $table->text('thumb')->nullable();
-            $table->unsignedSmallInteger('price');
+            $table->decimal('price', $precision = 6, $scale = 2);
             $table->string('series', 255);
             $table->date('sale_date');
             $table->string('type', 100);

@@ -22,18 +22,28 @@
                 @csrf
 
                 <div class="mt-3">
-                    <label for="title" class="form-label text-light">Città</label>
+                    <label for="title" class="form-label text-light">Titolo:</label>
                     <input type="text" name="title" class="form-control" id="title" placeholder="Batman: Returns">
                 </div>
 
                 <div class="my-3">
-                    <label for="price" class="form-label text-light">Indirizzo</label>
+                    <label for="price" class="form-label text-light">Prezzo:</label>
                     <input type="text" name="price" class="form-control" id="price" placeholder="19.99">
                 </div>
 
                 <div class="mb-3">
-                    <label for="type" class="form-label text-light">Tipologia</label>
+                    <label for="type" class="form-label text-light">Tipo:</label>
                     <input type="text" name="type" class="form-control" id="type" placeholder="comic book">
+                </div>
+
+                <div class="my-3">
+                    <label for="series" class="form-label text-light">Serie:</label>
+                    <input type="text" name="series" class="form-control" id="series" placeholder="Action Comics">
+                </div>
+
+                <div class="my-3">
+                    <label for="sale_date" class="form-label text-light">Data di Pubblicazione:</label>
+                    <input type="text" name="sale_date" class="form-control" id="sale_date" placeholder="2024-01-24">
                 </div>
 
                 <button type="submit" class="btn btn-danger">Submit</button>

@@ -1,5 +1,5 @@
 .my-card{
-    width: 500px;
+    max-width: 500px;    
 }
 
 .img-micro{
@@ -9,4 +9,35 @@
 
 .my-card-body{
     min-height: 285px;
+}
+
+.my-card-footer{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 15px;
+    height: 100px;       
+}
+
+
+.my-modal{
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    color: red;
+}
+
+.my-modal.visible{
+    display: block;
+}
+
+.my-modal__box{
+    display: flex;
+    padding: 0 20px;
+    justify-content: space-around;
 }

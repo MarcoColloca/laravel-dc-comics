@@ -24,16 +24,26 @@
                             <p class="card-text">{{$comic->sale_date}}</p>
                             <p class="card-text">{{$comic->type}}</p>
                             <h4 class="text-center">
-                                <a href="{{route('comics.show', $comic)}}" class="btn btn-warning text-danger border-danger">Details</a>
+                                <a href="{{route('comics.show', $comic)}}"
+                                    class="btn btn-warning text-danger border-danger">Details</a>
                             </h4>
                         </div>
-                        <div class="card-footer">                            
-                            <h4 class="btn btn-primary"><a class="d-inline-block w-100" href="{{route('comics.edit', $comic)}}">Edit</a></h4>
-                            <form action="{{route('comics.destroy', $comic)}}" method="POST">
+                        <div class="card-footer my-card-footer">
+                            <h4 class="btn btn-primary"><a class="d-inline-block w-100"
+                                    href="{{route('comics.edit', $comic)}}">Edit</a></h4>
+                            <form class="comic-delete-form" action="{{route('comics.destroy', $comic)}}" method="POST">
                                 @csrf
                                 @method('DELETE')
 
                                 <button class="btn btn-link link-danger">Delete</button>
+
+                                <div class="my-modal">
+                                    <h5 class="text-center">Vuoi Davvero Eliminare il Fumetto?!</h5>
+                                    <div class="my-modal__box">
+                                        <p class="btn btn-danger my-modal-yes">Sì</p>
+                                        <p class="btn btn-success my-modal-no">No</p>
+                                    </div>
+                                </div>
                             </form>
                         </div>
                     </div>

@@ -21,7 +21,7 @@
 
                 {{-- Qui va inserito il Cross Site Request Forgering --}}
                 @csrf
-                
+
                 {{-- Qui bisogna specificare il metodo della chiamata --}}
                 @method('PUT')
 

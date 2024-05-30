@@ -32,3 +32,14 @@ Route::get('/comics/{comic}', [ComicController::class, 'show'])->name('comics.sh
 
 // Store
 Route::post('/houses', [ComicController::class, 'store'])->name('comics.store');
+
+
+// Edit
+Route::get('/houses/{house}/edit', [ComicController::class, 'edit'])->name('comics.edit');
+
+
+// Update
+
+
+
+// Delete

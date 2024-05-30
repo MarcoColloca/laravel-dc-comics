@@ -71,4 +71,12 @@ class ComicController extends Controller
         // Reindirizzo l'utente che ha mandato il form alla pagina che voglio.
         return redirect()->route('comics.show', $new_comic);
     }
+
+
+
+    public function edit(Comic $comic){
+
+        return view('comics.edit', compact('comic'));
+
+    }
 }

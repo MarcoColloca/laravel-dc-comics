@@ -23,8 +23,12 @@
                             <p class="card-text">{{$comic->price}} $</p>
                             <p class="card-text">{{$comic->sale_date}}</p>
                             <p class="card-text">{{$comic->type}}</p>
-
-                            <a href="{{route('comics.show', $comic)}}" class="btn btn-warning text-danger border-danger">Details</a>
+                            <h4 class="text-center">
+                                <a href="{{route('comics.show', $comic)}}" class="btn btn-warning text-danger border-danger">Details</a>
+                            </h4>
+                        </div>
+                        <div class="card-footer">                            
+                            <h4 class="btn btn-primary"><a class="d-inline-block w-100" href="{{route('comics.edit', $comic)}}">Edit</a></h4>
                         </div>
                     </div>
                 </div>

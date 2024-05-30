@@ -22,6 +22,9 @@
                 <p class="card-text">{{$comic->sale_date}}</p>
                 <p class="card-text">{{$comic->type}}</p>
                 <p class="card-text">{{$comic->description}}</p>
+                <div class="card-footer">
+                    <h4 class="btn btn-primary"><a class="d-inline-block w-100" href="{{route('comics.edit', $comic)}}">Modifica</a></h4>
+                </div>
             </div>
         </div>
     </div>

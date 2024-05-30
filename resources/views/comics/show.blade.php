@@ -24,6 +24,12 @@
                 <p class="card-text">{{$comic->description}}</p>
                 <div class="card-footer">
                     <h4 class="btn btn-primary"><a class="d-inline-block w-100" href="{{route('comics.edit', $comic)}}">Modifica</a></h4>
+                    <form action="{{route('comics.destroy', $comic)}}" method="POST">
+                        @csrf
+                        @method('DELETE')
+
+                        <button class="btn btn-link link-danger">Delete</button>
+                    </form>
                 </div>
             </div>
         </div>

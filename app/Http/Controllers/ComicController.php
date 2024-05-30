@@ -7,7 +7,8 @@ use Illuminate\Http\Request;
 
 class ComicController extends Controller
 {
-    public function index(){
+    public function index()
+    {
 
         $comics = Comic::all();
 
@@ -15,7 +16,8 @@ class ComicController extends Controller
     }
 
 
-    public function show(Comic $comic){
+    public function show(Comic $comic)
+    {
 
 
         dump('Funziona');
@@ -31,7 +33,8 @@ class ComicController extends Controller
     }
 
 
-    public function store(Request $request){
+    public function store(Request $request)
+    {
 
         // Recupero  i parametri che arrivano dal form
         $form_data = $request->all();
@@ -79,14 +82,16 @@ class ComicController extends Controller
 
 
 
-    public function edit(Comic $comic){
+    public function edit(Comic $comic)
+    {
 
         return view('comics.edit', compact('comic'));
 
     }
 
 
-    public function update(Request $request, Comic $comic){
+    public function update(Request $request, Comic $comic)
+    {
 
         /* 
          |------------------------------------------------------------------------------------
@@ -111,5 +116,14 @@ class ComicController extends Controller
         //dd($comic);
 
         return redirect()->route('comics.show', $comic);
+    }
+
+
+    public function destroy(Comic $comic)
+    {
+        $comic->delete();
+
+
+        return to_route('comics.index');
     }
 }

@@ -36,12 +36,17 @@ class ComicController extends Controller
         // Recupero  i parametri che arrivano dal form
         $form_data = $request->all();
 
-        /** Nel caso non dovessi popolare variabili e volessi fare tutto con un unico comando, potrei
-         *  utilizzare il metodo statico create che in automatico, crea l'istanza, la popola e la salva.
-         *  Ricordando di andare ad assegnare poi le Model alla variabile protected $fillable un Array
-         *  contenente i nomi delle variabili da popolare.
-         *  ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
-         *  $new_comic = Comic::create($form_data);
+
+        /* 
+         |------------------------------------------------------------------------------------
+         | Nel caso non dovessi popolare variabili e volessi fare tutto con un unico comando, 
+         | potrei utilizzare il metodo statico create che in automatico, crea l'istanza, 
+         | la popola e la salva. Ricordando di andare ad assegnare poi le Model alla variabile
+         | protected $fillable un Array contenente i nomi delle variabili da popolare.
+         | ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
+         |  $new_comic = Comic::create($form_data);
+         | ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑
+         |------------------------------------------------------------------------------------
         */
 
 
@@ -78,5 +83,33 @@ class ComicController extends Controller
 
         return view('comics.edit', compact('comic'));
 
+    }
+
+
+    public function update(Request $request, Comic $comic){
+
+        /* 
+         |------------------------------------------------------------------------------------
+         | Come per il metodo store, se andiamo a settare la variabile protected $fillable 
+         | all'interno del Metodo Comic, possiamo eseguire l'operazione di riempimento e 
+         | salvataggio contemporaneamente, questa volta utilizzando il metodo update
+         | ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓ ↓
+         |  $comic->update($form_data);
+         | ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑ ↑
+         |------------------------------------------------------------------------------------
+        */
+
+
+        // Recupero i parametri che arrivano dal form
+        $form_data = $request->all();
+
+        // Modifico i dati all'interno della nostra istanza con i dati che derivano dal form
+        $comic->fill($form_data);
+
+        // Salvo i dati 
+        $comic->save();
+        //dd($comic);
+
+        return redirect()->route('comics.show', $comic);
     }
 }

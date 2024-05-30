@@ -16,13 +16,14 @@
         </div>
 
         <div class="container">
-            <form action="" method="POST">
+            <form action="{{route('comics.update', $comic)}}" method="POST">
 
 
                 {{-- Qui va inserito il Cross Site Request Forgering --}}
                 @csrf
-                 {{-- Qui bisogna specificare il metodo della chiamata --}}
-                 @method('PUT')
+                
+                {{-- Qui bisogna specificare il metodo della chiamata --}}
+                @method('PUT')
 
                 <div class="mt-3">
                     <label for="title" class="form-label text-light">Titolo:</label>
